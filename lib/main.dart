@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:pokemon_flutter/poke_detail.dart';
+import 'package:pokemon_flutter/poke_list_item.dart';
 
 void main() {
   debugPaintSizeEnabled = true;
@@ -26,17 +26,11 @@ class TopPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: ElevatedButton(
-          child: const Text('detail'),
-          onPressed: () => {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (BuildContext context) => const PokeDetail(),
-              ),
-            ),
-          },
-        ),
+      body: ListView.builder(
+        itemBuilder: (BuildContext context, int index) {
+          return PokeListItem(index: index);
+        },
+        itemCount: 100,
       ),
     );
   }
