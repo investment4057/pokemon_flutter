@@ -33,6 +33,7 @@ class _TopPageState extends State<TopPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
+        // 条件式 ? trueの場合の処理 : falseの場合の処理
         child: currentbnb == 0 ? const PokeList() : const Settings(),
       ),
       bottomNavigationBar: BottomNavigationBar(
