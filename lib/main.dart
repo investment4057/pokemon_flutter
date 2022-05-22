@@ -3,7 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:pokemon_flutter/poke_list_item.dart';
 
 void main() {
-  debugPaintSizeEnabled = true;
+  debugPaintSizeEnabled = false;
   runApp(const MyApp());
 }
 
@@ -30,6 +30,18 @@ class TopPage extends StatelessWidget {
           return PokeListItem(index: index);
         },
         itemCount: 100,
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.list),
+            label: 'home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'setting',
+          )
+        ],
       ),
     );
   }
